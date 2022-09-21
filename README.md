@@ -1,2 +1,12 @@
-# projeto-integrado-3
-Repositório destinado ao armazenamento dos artefatos produzidos na disciplina de Projeto Integrado III
+# Projeto Integrado III
+
+## Descrição
+Repositório destinado ao armazenamento dos artefatos produzidos na disciplina de Projeto Integrado III, do curso de Engenharia de Software da Universidade Federal do Ceará - Campus Quixadá. A disciplina é ministrada pelo professor Camilo Camilo Almendra.
+
+## Equipe - CliniVet
+ - Felipe Raulino Lemos (https://github.com/FelipeRaulino)
+ - Ítalo Rodrigues Nascimento (https://github.com/italorodri)
+ - Mateus Gonçalves Loiola
+
+## Links
+ - Figma: https://www.figma.com/file/2mqWPi8kkhZt4Et6Kv6thT/CliniVet?node-id=0%3A1
