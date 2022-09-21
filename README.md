@@ -10,3 +10,4 @@ Repositório destinado ao armazenamento dos artefatos produzidos na disciplina d
 
 ## Links
  - Figma: https://www.figma.com/file/2mqWPi8kkhZt4Et6Kv6thT/CliniVet?node-id=0%3A1
+ - Trello: https://trello.com/b/MrQ5pVLV/pies-iii-clinivet
