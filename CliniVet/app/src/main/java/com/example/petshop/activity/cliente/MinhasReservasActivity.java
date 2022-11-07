@@ -1,21 +1,20 @@
 package com.example.petshop.activity.cliente;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.petshop.R;
 import com.example.petshop.adapter.AdapterReservas;
-import com.example.petshop.adapter.AdapterServicos;
 import com.example.petshop.helper.FirebaseHelper;
 import com.example.petshop.model.Reserva;
-import com.example.petshop.model.Servico;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -50,6 +49,9 @@ public class MinhasReservasActivity extends AppCompatActivity implements Adapter
 
     private void configCliques(){
         findViewById(R.id.ib_voltar).setOnClickListener(view -> finish());
+        findViewById(R.id.ib_historico).setOnClickListener(view -> {
+            startActivity(new Intent(this, MeuHistoricoReservasActivity.class));
+        });
     }
 
     private void configRv(){

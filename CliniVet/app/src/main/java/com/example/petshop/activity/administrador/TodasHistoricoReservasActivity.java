@@ -1,6 +1,5 @@
 package com.example.petshop.activity.administrador;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -24,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class TodasASReservasActivity extends AppCompatActivity implements AdapterReservas.OnClick {
+public class TodasHistoricoReservasActivity extends AppCompatActivity implements AdapterReservas.OnClick {
 
     private List<Reserva> reservaList = new ArrayList<>();
 
@@ -36,7 +35,7 @@ public class TodasASReservasActivity extends AppCompatActivity implements Adapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_todas_asreservas);
+        setContentView(R.layout.activity_todas_historico_reservas);
 
         iniciaComponentes();
 
@@ -51,21 +50,7 @@ public class TodasASReservasActivity extends AppCompatActivity implements Adapte
         recuperaReservas();
     }
 
-    private void configCliques(){
-        findViewById(R.id.ib_voltar).setOnClickListener(view -> finish());
-        findViewById(R.id.ib_historico).setOnClickListener(view ->{
-            startActivity(new Intent(this, TodasHistoricoReservasActivity.class));
-        });
-    }
-
-    private void configRv(){
-        rv_reservas.setLayoutManager(new LinearLayoutManager(this));
-        rv_reservas.setHasFixedSize(true);
-        adapterReservas = new AdapterReservas(reservaList, this);
-        rv_reservas.setAdapter(adapterReservas);
-    }
-
-    private void recuperaReservas(){
+    private void recuperaReservas() {
         DatabaseReference reference = FirebaseHelper.getDatabaseReference()
                 .child("reservas_all");
 
@@ -77,7 +62,7 @@ public class TodasASReservasActivity extends AppCompatActivity implements Adapte
                     for(DataSnapshot snap : snapshot.getChildren()){
                         Reserva reserva = snap.getValue(Reserva.class);
 
-                        if(!reserva.getStatus().equals("cancelada") && !reserva.getStatus().equals("concluida")){
+                        if(reserva.getStatus().equals("cancelada") || reserva.getStatus().equals("concluida")){
                             reservaList.add(reserva);
                         }
 
@@ -99,19 +84,28 @@ public class TodasASReservasActivity extends AppCompatActivity implements Adapte
         });
     }
 
-    private void iniciaComponentes(){
+    private void configCliques() {
+        findViewById(R.id.ib_voltar).setOnClickListener(view -> finish());
+    }
+
+    private void configRv() {
+        rv_reservas.setLayoutManager(new LinearLayoutManager(this));
+        rv_reservas.setHasFixedSize(true);
+        adapterReservas = new AdapterReservas(reservaList, this);
+        rv_reservas.setAdapter(adapterReservas);
+    }
+
+    private void iniciaComponentes() {
         progressBar = findViewById(R.id.progressBar);
         text_info = findViewById(R.id.text_info);
         rv_reservas = findViewById(R.id.rv_reservas);
 
         TextView text_titulo = findViewById(R.id.text_titulo);
-        text_titulo.setText("Todas as Reservas");
+        text_titulo.setText("Histórico de Reservas");
     }
 
     @Override
     public void OnClickListener(Reserva reserva) {
-        Intent intent = new Intent(this, EditarStatusReservaActivity.class);
-        intent.putExtra("reserva", reserva);
-        startActivity(intent);
+
     }
 }
