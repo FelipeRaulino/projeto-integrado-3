@@ -3,6 +3,7 @@ package com.example.petshop.activity.cliente;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class AgendarAtendimento extends AppCompatActivity implements AdapterServ
     private RecyclerView rv_servicos;
     private TextView text_info;
     private ProgressBar progressBar;
+    private ImageButton imageButton_voltar;
 
     private List<Servico> servicoList = new ArrayList<>();
     private AdapterServicos adapterServicos;
@@ -40,6 +42,8 @@ public class AgendarAtendimento extends AppCompatActivity implements AdapterServ
         setContentView(R.layout.activity_agendar_atendimento);
 
         iniciaComponentes();
+
+        configCliques();
 
         configRv();
 
@@ -54,6 +58,15 @@ public class AgendarAtendimento extends AppCompatActivity implements AdapterServ
         adapterServicos = new AdapterServicos(servicoList, this);
         rv_servicos.setAdapter(adapterServicos);
 
+    }
+
+    private void configCliques(){
+        imageButton_voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void recuperaServicos() {
@@ -91,6 +104,7 @@ public class AgendarAtendimento extends AppCompatActivity implements AdapterServ
         rv_servicos = findViewById(R.id.rv_servicos);
         text_info = findViewById(R.id.text_info);
         progressBar = findViewById(R.id.progressBar);
+        imageButton_voltar = findViewById(R.id.imageButton_voltar);
     }
 
 
