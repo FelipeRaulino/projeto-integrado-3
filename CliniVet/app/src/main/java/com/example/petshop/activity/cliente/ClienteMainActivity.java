@@ -3,6 +3,8 @@ package com.example.petshop.activity.cliente;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.petshop.R;
+import com.example.petshop.activity.autenticacao.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,8 +26,11 @@ public class ClienteMainActivity extends AppCompatActivity {
 
     private LinearLayout menu_meus_pets, menu_agendar_atendimento, menu_consultar_agendamentos;
     private TextView txtView_nomeUsuario;
+    private ImageButton btn_logout;
+
     private DatabaseReference mDatabase;
     private FirebaseAuth fAuth;
+
     private String userID;
 
     @Override
@@ -84,6 +90,15 @@ public class ClienteMainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MinhasReservasActivity.class))
         );
 
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fAuth.signOut();
+                startActivity(new Intent(ClienteMainActivity.this, LoginActivity.class));
+                finish();
+            }
+        });
+
     }
 
     private void iniciaComponentes(){
@@ -93,6 +108,7 @@ public class ClienteMainActivity extends AppCompatActivity {
         menu_agendar_atendimento = findViewById(R.id.menu_agendar_atendimento);
         menu_consultar_agendamentos = findViewById(R.id.menu_consultar_agendamentos);
         txtView_nomeUsuario = findViewById(R.id.txtView_nomeUsuario);
+        btn_logout = findViewById(R.id.btn_logout);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
