@@ -10,6 +10,4 @@
 
     <color name="azul_padrao">#279AFB</color>
     <color name="cor_delete">#ff0000</color>
-    <color name="cor_logo">#8AAAE5</color>
-    <color name="pendenteCor">#CF7C00</color>
 </resources>

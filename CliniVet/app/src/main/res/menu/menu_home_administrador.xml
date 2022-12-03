@@ -9,4 +9,7 @@
 
     <item android:id="@+id/menu_minha_conta"
         android:title="Minha conta"/>
+
+    <item android:id="@+id/menu_sair"
+        android:title="Sair"/>
 </menu>
