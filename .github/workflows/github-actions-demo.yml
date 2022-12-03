@@ -12,4 +12,4 @@ jobs:
         with:
           java-version: 1.8
       - name: Testes Unitários
-        run: chmod +x gradlew &&  cd ./CliniVet && ./gradlew test --stacktrace
+        run: cd ./CliniVet && chmod +x gradlew &&   ./gradlew test --stacktrace
