@@ -7,7 +7,8 @@ buildscript {
         maven { url "https://jitpack.io" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.0'
+        classpath 'com.android.tools.build:gradle-settings:8.0.0-alpha09'
+        classpath 'com.android.tools.build:gradle-settings-api:8.0.0-alpha09'
         classpath 'com.google.gms:google-services:4.3.14'
     }
 
@@ -23,8 +24,8 @@ buildscript {
 }
 
 plugins {
-    id 'com.android.application' version '7.2.2' apply false
-    id 'com.android.library' version '7.2.2' apply false
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.0' apply false
 }
 
