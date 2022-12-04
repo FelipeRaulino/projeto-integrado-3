@@ -56,7 +56,7 @@ public class PetUnitTest {
     }
 
     @Test
-    public void testSetTipo(){
+    public void testAtualizandoTipoPet(){
         String tipoTest = "Bolt";
         pet.setTipo(tipoTest);
         assertEquals(tipoTest, pet.getTipo());
