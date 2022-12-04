@@ -3,6 +3,9 @@ version = 1
 [[analyzers]]
 name = "test-coverage"
 enabled = true
+test_patterns = [
+  "test/**",
+]
 
 [[analyzers]]
 name = "java"
