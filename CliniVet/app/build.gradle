@@ -4,6 +4,7 @@ plugins {
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
+
 android {
     compileSdk 33
 
@@ -30,6 +31,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+
     namespace 'com.example.petshopx'
 }
 
@@ -60,4 +62,10 @@ dependencies {
 
     //https://github.com/tsuryo/Swipeable-RecyclerView
     implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
+}
+
+tasks.withType(Test) {
+    testLogging {
+        events "standardOut", "started", "passed", "skipped", "failed"
+    }
 }
