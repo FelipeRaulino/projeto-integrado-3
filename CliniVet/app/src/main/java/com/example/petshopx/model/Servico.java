@@ -2,80 +2,77 @@ package com.example.petshopx.model;
 
 import com.example.petshopx.helper.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
-
 import java.io.Serializable;
 
 public class Servico implements Serializable {
-    private String id;
-    private String nome;
-    private String pets;
-    private String descricao;
-    private String preco;
+  private String id;
+  private String nome;
+  private String pets;
+  private String descricao;
+  private String preco;
 
-    public Servico(String id, String nome, String pets, String descricao, String preco) {
-        this.id = id;
-        this.nome = nome;
-        this.pets = pets;
-        this.descricao = descricao;
-        this.preco = preco;
-    }
+  public Servico(String id, String nome, String pets, String descricao, String preco) {
+    this.id = id;
+    this.nome = nome;
+    this.pets = pets;
+    this.descricao = descricao;
+    this.preco = preco;
+  }
 
-    public Servico() {
-        DatabaseReference reference = FirebaseHelper.getDatabaseReference();
-        this.setId(reference.push().getKey());
-    }
+  public Servico() {
+    DatabaseReference reference = FirebaseHelper.getDatabaseReference();
+    this.setId(reference.push().getKey());
+  }
 
-    public void salvar(){
-        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
-                .child("servicos")
-                .child(this.getId());
-        reference.setValue(this);
-    }
+  public void salvar() {
+    DatabaseReference reference =
+        FirebaseHelper.getDatabaseReference().child("servicos").child(this.getId());
+    reference.setValue(this);
+  }
 
-    public void deletar(){
-        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
-                .child("servicos")
-                .child(this.getId());
-        reference.removeValue();
-    }
+  public void deletar() {
+    DatabaseReference reference =
+        FirebaseHelper.getDatabaseReference().child("servicos").child(this.getId());
+    reference.removeValue();
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public String getNome() {
-        return nome;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-    public String getPets() {
-        return pets;
-    }
+  public String getPets() {
+    return pets;
+  }
 
-    public void setPets(String pets) {
-        this.pets = pets;
-    }
+  public void setPets(String pets) {
+    this.pets = pets;
+  }
 
-    public String getDescricao() {
-        return descricao;
-    }
+  public String getDescricao() {
+    return descricao;
+  }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
+  }
 
-    public String getPreco() {
-        return preco;
-    }
+  public String getPreco() {
+    return preco;
+  }
 
-    public void setPreco(String preco) {
-        this.preco = preco;
-    }
+  public void setPreco(String preco) {
+    this.preco = preco;
+  }
 }

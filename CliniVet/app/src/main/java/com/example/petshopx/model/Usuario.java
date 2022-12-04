@@ -5,57 +5,56 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
 public class Usuario {
-    private String id;
-    private String nome;
-    private String email;
-    private String telefone;
-    private String senha;
+  private String id;
+  private String nome;
+  private String email;
+  private String telefone;
+  private String senha;
 
-    public void salvar(){
-        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
-                .child("usuarios")
-                .child(this.getId());
-        reference.setValue(this);
-    }
+  public void salvar() {
+    DatabaseReference reference =
+        FirebaseHelper.getDatabaseReference().child("usuarios").child(this.getId());
+    reference.setValue(this);
+  }
 
-    public String getId() {
-        return id;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public String getNome() {
-        return nome;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public String getEmail() {
+    return email;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public void setEmail(String email) {
+    this.email = email;
+  }
 
-    public String getTelefone() {
-        return telefone;
-    }
+  public String getTelefone() {
+    return telefone;
+  }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+  public void setTelefone(String telefone) {
+    this.telefone = telefone;
+  }
 
-    @Exclude
-    public String getSenha() {
-        return senha;
-    }
+  @Exclude
+  public String getSenha() {
+    return senha;
+  }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+  public void setSenha(String senha) {
+    this.senha = senha;
+  }
 }
