@@ -12,6 +12,14 @@ public class Servico implements Serializable {
     private String descricao;
     private String preco;
 
+    public Servico(String id, String nome, String pets, String descricao, String preco) {
+        this.id = id;
+        this.nome = nome;
+        this.pets = pets;
+        this.descricao = descricao;
+        this.preco = preco;
+    }
+
     public Servico() {
         DatabaseReference reference = FirebaseHelper.getDatabaseReference();
         this.setId(reference.push().getKey());

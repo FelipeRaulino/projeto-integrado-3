@@ -19,6 +19,21 @@ public class Reserva implements Serializable {
     private String hora;
     private String status;
 
+    public Reserva(String id, String idpet, String idDono, String idServico, String petNome, String donoNome, String servicoNome, String telefoneDono, String imgPet, String dia, String hora, String status) {
+        this.id = id;
+        this.idpet = idpet;
+        this.idDono = idDono;
+        this.idServico = idServico;
+        this.petNome = petNome;
+        this.donoNome = donoNome;
+        this.servicoNome = servicoNome;
+        this.telefoneDono = telefoneDono;
+        this.imgPet = imgPet;
+        this.dia = dia;
+        this.hora = hora;
+        this.status = status;
+    }
+
     public Reserva(){
         DatabaseReference reference = FirebaseHelper.getDatabaseReference();
         this.setId(reference.push().getKey());
