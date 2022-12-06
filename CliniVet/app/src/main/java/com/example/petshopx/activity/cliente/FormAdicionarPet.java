@@ -1,8 +1,5 @@
 package com.example.petshopx.activity.cliente;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.petshopx.R;
 import com.example.petshopx.helper.FirebaseHelper;
@@ -99,8 +99,10 @@ public class FormAdicionarPet extends AppCompatActivity {
     }
 
     private void abrirGaleria(){
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(intent, REQUEST_GALERIA);
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), REQUEST_GALERIA);
     }
 
     private void configCliques(){
