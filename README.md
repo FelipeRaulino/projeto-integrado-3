@@ -6,7 +6,7 @@ Repositório destinado ao armazenamento dos artefatos produzidos na disciplina d
 ## Equipe - CliniVet
  - Felipe Raulino Lemos (https://github.com/FelipeRaulino)
  - Ítalo Rodrigues Nascimento (https://github.com/italorodri)
- - Mateus Gonçalves Loiola
+ - Mateus Gonçalves Loiola (https://github.com/LoiolaBr17)
 
 ## Links
  - Figma: https://www.figma.com/file/2mqWPi8kkhZt4Et6Kv6thT/CliniVet?node-id=0%3A1
