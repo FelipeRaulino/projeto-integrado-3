@@ -23,28 +23,28 @@ public class UsuarioUnitTest {
     }
 
     @Test
-    public void testSetNome(){
+    public void testAtualizandoNomeDoUsuario(){
         String nomeTest = "João";
         usuario.setNome(nomeTest);
         assertEquals(nomeTest, usuario.getNome());
     }
 
     @Test
-    public void testSetEmail(){
+    public void testAtualizandoEmailDoUsuario(){
         String emailTest = "joão@gmail.com";
         usuario.setNome(emailTest);
         assertEquals(emailTest, usuario.getNome());
     }
 
     @Test
-    public void testSetTelefone(){
+    public void testAtualizandoTelefoneDoUsuario(){
         String telefoneTest = "88928373829";
         usuario.setNome(telefoneTest);
         assertEquals(telefoneTest, usuario.getNome());
     }
 
     @Test
-    public void testSetSenha(){
+    public void testAtualizandoSenhaDoUsuario(){
         String senhaTest = "joao123";
         usuario.setNome(senhaTest);
         assertEquals(senhaTest, usuario.getNome());

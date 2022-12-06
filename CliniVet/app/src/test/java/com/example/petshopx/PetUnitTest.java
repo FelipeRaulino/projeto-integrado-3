@@ -56,42 +56,42 @@ public class PetUnitTest {
   }
 
   @Test
-  public void testSetNome() {
+  public void testAtualizandodoNomeDoPet() {
     String nomeTest = "Bolt";
     pet.setNome(nomeTest);
     assertEquals(nomeTest, pet.getNome());
   }
 
   @Test
-  public void testAtualizandoTipoPet() {
+  public void testAtualizandoTipoDoPet() {
     String tipoTest = "Bolt";
     pet.setTipo(tipoTest);
     assertEquals(tipoTest, pet.getTipo());
   }
 
   @Test
-  public void testSetDescricao() {
+  public void testAtualizandoDescricaoSobrePet() {
     String descricaoTest = "Uma nova descrição";
     pet.setDescricao(descricaoTest);
     assertEquals(descricaoTest, pet.getDescricao());
   }
 
   @Test
-  public void testSetIdade() {
+  public void testAtualizandoIdadeDoPet() {
     String idadeTest = "2,5";
     pet.setIdade(idadeTest);
     assertEquals(idadeTest, pet.getIdade());
   }
 
   @Test
-  public void testSetPeso() {
+  public void testAtualizandoPesoDoPet() {
     String pesoTest = "2,8";
     pet.setPeso(pesoTest);
     assertEquals(pesoTest, pet.getPeso());
   }
 
   @Test
-  public void testSetAltura() {
+  public void testAtualizandoAlturaDoPet() {
     String alturaTest = "88";
     pet.setAltura(alturaTest);
     assertEquals(alturaTest, pet.getAltura());
