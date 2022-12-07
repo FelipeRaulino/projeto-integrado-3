@@ -11,3 +11,7 @@ Repositório destinado ao armazenamento dos artefatos produzidos na disciplina d
 ## Links
  - Figma: https://www.figma.com/file/2mqWPi8kkhZt4Et6Kv6thT/CliniVet?node-id=0%3A1
  - Trello: https://trello.com/b/MrQ5pVLV/pies-iii-clinivet
+
+## Links para ferramentas de análise das métricas internas
+ - Codefactor: https://www.codefactor.io/repository/github/feliperaulino/projeto-integrado-3
+ - Codacy: https://app.codacy.com/gh/FelipeRaulino/projeto-integrado-3/dashboard
